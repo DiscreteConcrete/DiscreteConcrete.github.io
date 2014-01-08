@@ -9,18 +9,12 @@
 
     <!-- Le styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
-<!--     <link href="http://getbootstrap.com/2.3.2/assets/css/docs.css" rel="stylesheet"> -->
-    <link href="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Le fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://getbootstrap.com/docs-assets/ico/apple-touch-icon-144-precomposed.png">
 
     <style>
     /* Jumbotrons
@@ -79,27 +73,7 @@
       font-weight: 200;
       color: #fff; /* redeclare to override the `.jumbotron a` */
       border: 0;
-/*      -webkit-border-radius: 6px;
-         -moz-border-radius: 6px;
-              border-radius: 6px;
-      -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-         -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-              box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-      -webkit-transition: none;
-         -moz-transition: none;
-              transition: none;
-*/    }
-/*    .masthead .btn:hover {
-      -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-         -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-              box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
     }
-    .masthead .btn:active {
-      -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
-         -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
-              box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
-    }
-*/
 
     .btn-front {
       background-color: hsl(0, 0%, 13%) !important;
@@ -121,13 +95,6 @@
     }
 
 
-/*    .btn-outline-inverse {
-      width: auto;
-      margin: 20px 5px 20px 0;
-      padding: 18px 24px;
-      font-size: 21px;
-    }
-*/
     /* Inverted outline button (white on dark) */
     .btn-outline-inverse {
       color: #fff;
@@ -158,7 +125,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: url(http://getbootstrap.com/2.3.2/assets/img/bs-docs-masthead-pattern.png) repeat center center;
+      background: url(img/masthead-pattern.png) repeat center center;
       opacity: .4;
     }
 
@@ -296,17 +263,6 @@
     }
 
 
-
-/*    .navbar-link {
-      font-size:20px;
-      z-index:10;
-      color:#FFF;
-    }
-    .navbar-link:hover {
-      color:rgb(218, 102, 166);
-      text-decoration:none;
-    }
-*/
     .navbar-link {
       font-size:20px;
       /*z-index:10;*/
@@ -331,113 +287,108 @@
 
     <!-- Navbar
     ================================================== -->
-<div class="" style="z-index:5;width:100%;position:absolute">
-  <div style="width:100%;height:10px"></div>
-  <div class="container text-center" style="max-width:900px">
-    <div class="row">
-      <div class="col-md-3">
-        <canvas id="myCanvas0" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
-      </div>
-      <div class="col-md-3">
-        <canvas id="myCanvas1" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
-      </div>
-      <div class="col-md-3">
-        <canvas id="myCanvas2" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
-      </div>
-      <div class="col-md-3">
-        <canvas id="myCanvas3" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
-      </div>
-      <script>
-        //ugly, I know
-        for(var i=0;i<5;i+=1){
-          var canvas = document.getElementById('myCanvas'+i);
-          var context = canvas.getContext('2d');
-          var centerX = canvas.width / 2;
-          var centerY = canvas.height / 2;
-          var radius = 15;
+    <div class="" style="z-index:5;width:100%;position:absolute">
+      <div style="width:100%;height:10px"></div>
+      <div class="container text-center" style="max-width:900px">
+        <div class="row">
+          <div class="col-md-3">
+            <canvas id="myCanvas0" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
+          </div>
+          <div class="col-md-3">
+            <canvas id="myCanvas1" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
+          </div>
+          <div class="col-md-3">
+            <canvas id="myCanvas2" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
+          </div>
+          <div class="col-md-3">
+            <canvas id="myCanvas3" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
+          </div>
+          <script>
+            //not the nicest way, I know
+            for(var i=0;i<5;i+=1){
+              var canvas = document.getElementById('myCanvas'+i);
+              var context = canvas.getContext('2d');
+              var centerX = canvas.width / 2;
+              var centerY = canvas.height / 2;
+              var radius = 15;
 
-          context.beginPath();
-          context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-          context.fillStyle = 'black';
-          context.fill();
-          context.lineWidth = 0;
-          // context.strokeStyle = '#003300';
-          context.stroke();
-        }
-      </script>
-    </div>
-  </div>
-</div>
-    
-<div class="" style="z-index:10;width:100%;position:absolute">
-  <div style="width:100%;height:10px"></div>
-  <div class="container text-center" style="max-width:900px">
-    <div class="row">
-      <div class="col-md-3">
-        <a class="navbar-link" href="#">Home</a>
-      </div>
-      <div class="col-md-3">
-        <a class="navbar-link" href="#">Projects</a>
-      </div>
-      <div class="col-md-3">
-        <a class="navbar-link" href="#">About</a>
-      </div>
-      <div class="col-md-3">
-        <a class="navbar-link" href="#">Contact</a>
+              context.beginPath();
+              context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+              context.fillStyle = 'black';
+              context.fill();
+              context.lineWidth = 0;
+              context.stroke();
+            }
+          </script>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="jumbotron masthead">
-  <div class="container" style="max-width:900px">
-    <div class="row">
-      <div class="col-md-9">
-        <h1>Tomas Halgas</h1>
-        <p>And his illimitable philomathy</p>
+        
+    <div class="" style="z-index:10;width:100%;position:absolute">
+      <div style="width:100%;height:10px"></div>
+      <div class="container text-center" style="max-width:900px">
+        <div class="row">
+          <div class="col-md-3">
+            <a class="navbar-link" href="#">Home</a>
+          </div>
+          <div class="col-md-3">
+            <a class="navbar-link" href="#">Projects</a>
+          </div>
+          <div class="col-md-3">
+            <a class="navbar-link" href="#">About</a>
+          </div>
+          <div class="col-md-3">
+            <a class="navbar-link" href="#">Contact</a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <img src="TomasHalgas-fun.jpg" style="width:200px;border-radius:100px" alt="" />
+    </div>
+
+    <div class="jumbotron masthead">
+      <div class="container" style="max-width:900px">
+        <div class="row">
+          <div class="col-md-9">
+            <h1>Tomas Halgas</h1>
+            <p>And his illimitable philomathy</p>
+          </div>
+          <div class="col-md-3">
+            <img src="img/TomasHalgas-fun.jpg" class="img-circle" style="width:200px;" alt="" />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<script>
-$('#gotolist').click(function(e) {
-    e.preventDefault();
-    
-    var scrollto = $(this).attr('href');
-    $('html, body').animate({
-            scrollTop: $(scrollto).offset().top
-        }, 1500);
-});
-</script>
+    <script>
+    $('#gotolist').click(function(e) {
+        e.preventDefault();
+        
+        var scrollto = $(this).attr('href');
+        $('html, body').animate({
+                scrollTop: $(scrollto).offset().top
+            }, 1500);
+    });
+    </script>
 
-<div id="list" class="container">
+    <div id="list" class="container">
 
-<!--   <div class="alert alert-danger bs-alert-old-docs">
-    <strong>Heads up!</strong> These docs are for v2.3.2, which is no longer officially supported. <a href="http://getbootstrap.com">Check out the latest version of Bootstrap!</a>
-  </div>
- -->
-  <div class="col-lg-4">
-    <img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAErUlEQVR4Xu3YwStscRjG8d8QQnZEFkqyY6NE/n0rlOxkS1ZqrCiFe/udOtPcue6YJ889Gc93Vtz7eo/3eT/9zjl6/X7/V+FDAhMm0APMhElR1iQAGCBICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpgakH8/7+Xs7Ozsrz83M5OTkpi4uLfwRwd3dXbm5uyvr6etnf32/+r9/vl6urq1J/tn729vbKxsbGRMF1fb2JfqkOi6YazOvrazk9PS1vb2+l1+v9BaZd7tPT0wBM+zNLS0vl6OioXF5eNtjq13Nzc2Oj7/p6HTqY+FJTC2Z4eXXaj8BcX1+Xh4eHUmvX1taaE6Y9cba3t8vOzs7g+3rKzM/PNyfP8vJyA6j+/P39fXMCra6uDnC6rjfpqTbxNjsonGowFxcX5eDgYHBKDN+S2tvO1tZWub29/RRMC6ieOI+Pj+X4+Licn5+X9iSq6P7H9TrYsfUSUwumTeGjZ4r232ZmZsru7m5zarQnTHtqjJ4w7feT3naGn5m+cj3rNjto9iPBDN9K2tvMZ7ekFkzNvJ4y9YQaflAeB/Sr1+tgz7ZL/DgwCwsLzVtTfdAd/aysrJTNzc3mremjZ5j6TNHeyuoD8MvLy19vUKMn2levZ9tkR41+HJjR1+oWQHvCjHtLmp2dbbDVt67Dw8PmpKlfD79BffZarVzvs7eyjgxIl4kDM+7vMP96vhm+Nalgxl1P2tQ3KZ56MN8kx5hfAzAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gz6G1HzSbXtC7t7AAAAAElFTkSuQmCC">
-    <h2>Heading</h2>
-    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-    <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    <div class="col-lg-4">
+      <img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAErUlEQVR4Xu3YwStscRjG8d8QQnZEFkqyY6NE/n0rlOxkS1ZqrCiFe/udOtPcue6YJ889Gc93Vtz7eo/3eT/9zjl6/X7/V+FDAhMm0APMhElR1iQAGCBICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpAcBIcVEMGAxICQBGiotiwGBASgAwUlwUAwYDUgKAkeKiGDAYkBIAjBQXxYDBgJQAYKS4KAYMBqQEACPFRTFgMCAlABgpLooBgwEpgakH8/7+Xs7Ozsrz83M5OTkpi4uLfwRwd3dXbm5uyvr6etnf32/+r9/vl6urq1J/tn729vbKxsbGRMF1fb2JfqkOi6YazOvrazk9PS1vb2+l1+v9BaZd7tPT0wBM+zNLS0vl6OioXF5eNtjq13Nzc2Oj7/p6HTqY+FJTC2Z4eXXaj8BcX1+Xh4eHUmvX1taaE6Y9cba3t8vOzs7g+3rKzM/PNyfP8vJyA6j+/P39fXMCra6uDnC6rjfpqTbxNjsonGowFxcX5eDgYHBKDN+S2tvO1tZWub29/RRMC6ieOI+Pj+X4+Licn5+X9iSq6P7H9TrYsfUSUwumTeGjZ4r232ZmZsru7m5zarQnTHtqjJ4w7feT3naGn5m+cj3rNjto9iPBDN9K2tvMZ7ekFkzNvJ4y9YQaflAeB/Sr1+tgz7ZL/DgwCwsLzVtTfdAd/aysrJTNzc3mremjZ5j6TNHeyuoD8MvLy19vUKMn2levZ9tkR41+HJjR1+oWQHvCjHtLmp2dbbDVt67Dw8PmpKlfD79BffZarVzvs7eyjgxIl4kDM+7vMP96vhm+Nalgxl1P2tQ3KZ56MN8kx5hfAzAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gwKGE+OMV0AE7Nqz6CA8eQY0wUwMav2DAoYT44xXQATs2rPoIDx5BjTBTAxq/YMChhPjjFdABOzas+ggPHkGNMFMDGr9gz6G1HzSbXtC7t7AAAAAElFTkSuQmCC">
+      <h2>Heading</h2>
+      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+      </div>
     </div>
-  </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <%= render partial: "shared/offers", locals: {offers: @offers[1...(@offers.size+1)/2].to_a, width: 6} %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <%= render partial: "shared/offers", locals: {offers: @offers[1...(@offers.size+1)/2].to_a, width: 6} %>
+        </div>
+        <div class="col-md-6">
+          <%= render partial: "shared/offers", locals: {offers: @offers[(@offers.size+1)/2..-1].to_a, width: 6} %>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <%= render partial: "shared/offers", locals: {offers: @offers[(@offers.size+1)/2..-1].to_a, width: 6} %>
-    </div>
-  </div>
-</div>
 
     <!-- Footer
     ================================================== -->
@@ -447,13 +398,10 @@ $('#gotolist').click(function(e) {
       </div>
     </footer>
 
-
-
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="http://getbootstrap.com/docs-assets/js/holder.js"></script>
 
   </body>
 </html>
