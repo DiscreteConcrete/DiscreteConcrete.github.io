@@ -349,7 +349,7 @@
             <a class="navbar-link" href="#">Home</a>
           </div>
           <div class="col-md-3">
-            <a class="navbar-link" href="#">Projects</a>
+            <a class="navbar-link" href="#projects">Projects</a>
           </div>
           <div class="col-md-3">
             <a class="navbar-link" href="#">About</a>
@@ -362,6 +362,7 @@
     </div>
 
     <div class="jumbotron masthead">
+      <div style="width:100%;height:30px"></div>
       <div class="container" style="max-width:900px;">
         <div class="row">
           <div class="col-md-9">
@@ -376,7 +377,7 @@
     </div>
 
     <script>
-    $('#gotolist').click(function(e) {
+    $('.navbar-link').click(function(e) {
         e.preventDefault();
         
         var scrollto = $(this).attr('href');
@@ -386,9 +387,9 @@
     });
     </script>
 
-    <div id="list" class="container text-center">
+    <div id="projects" class="container text-center">
       
-      <!-- <div style="width:100%;height:10px"></div> -->
+      <div style="width:100%;height:30px"></div>
 
       <div class="row">
 
@@ -396,7 +397,7 @@
           <div class="img-div">
             <img alt="OxTET logo" style="width: 140px" src="img/oxtet-eye.png"/>
           </div>
-          <h2>President at OxTET</h2>
+          <h2>OxTET President</h2>
           <p>Organising, managing and overlooking speaker events on the topics of transhumanism, life extension, emerging technologies, augmented reality, systemic failures, cognitive enhancement and more in the Oxford Transhumanism & Emerging Technologies.</p>
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
         </div>
@@ -405,7 +406,7 @@
           <div class="img-div">
             <img alt="OE logo" style="width: 220px;" src="img/oe-white.png"/>
           </div>
-          <h2>Department Head at OE</h2>
+          <h2>OE Department Head</h2>
           <p>Director of Constructive Events responsible for organising workshops and meetups at the Oxford Entrepreneurs - the world's largest student-run entrepreneurial society.</p>
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
         </div>
@@ -414,13 +415,41 @@
           <div class="img-div">
             <img alt="OUSS logo" style="width: 140px;" src="img/ouss.png"/>
           </div>
-          <h2>Treasurer at OUSS</h2>
+          <h2>OUSS Treasurer</h2>
           <p>Overlooking finances of the Oxford University Scientific Society - the oldest student-run scientific society in the world.</p>
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
         </div>
       </div>
 
+      <div style="width:100%;height:30px"></div>
       <div class="row">
+        <div class="col-lg-4">
+          <div class="img-div">
+            <img alt="WuzOn logo" style="width: 140px;" src="img/wuzon.png"/>
+          </div>
+          <h2>WuzOn co-Founder</h2>
+          <p>Co-founder of a really cool event platform and currently designing and programming to get it ready for the wild - coming soon!</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="img-div">
+            <img alt="Oxford logo" style="width: 140px;" src="img/oxford-logo.jpg"/>
+          </div>
+          <h2>Oxford Student</h2>
+          <p>Student of Mathematics and Computer Science in University College, University of Oxford</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="img-div">
+            <img alt="Kairos logo" style="width: 140px;" src="img/kairos.png"/>
+          </div>
+          <h2>Kairos Society Fellow</h2>
+          <p>Tackling our world’s biggest problems through entrepreneurship and innovation as a Fellow of the Kairos Society</p>
+          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+        </div>
+      </div>
     </div>
 
     <!-- Footer
