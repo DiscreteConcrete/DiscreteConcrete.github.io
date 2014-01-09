@@ -332,7 +332,7 @@
             <canvas id="myCanvas3" width="30" height="30" style="margin-left:auto;marin-right:auto"></canvas>
           </div>
           <script>
-            //not the nicest way, I know
+            //draw the circles
             for(var i=0;i<5;i+=1){
               var canvas = document.getElementById('myCanvas'+i);
               var context = canvas.getContext('2d');
@@ -388,14 +388,14 @@
     </div>
 
     <script>
-    $('.navbar-link').click(function(e) {
+      //scrolling actions of the navbar buttons
+      $('.navbar-link').click(function(e) {
         e.preventDefault();
-        
         var scrollto = $(this).attr('href');
         $('html, body').animate({
-                scrollTop: $(scrollto).offset().top
-            }, 1500);
-    });
+          scrollTop: $(scrollto).offset().top
+        }, 1500);
+      });
     </script>
 
     <div id="now" class="container text-center">
@@ -471,7 +471,6 @@
           <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
         </div>
       </div>
-
     </div>
 
     <hr>
@@ -623,11 +622,6 @@
           <p>Think of anything that could happen - it's probably happening somewhere in the world right now. I keep thinking about really cool stuff and I want to see all of it and talk to the people involved. Visited 20+countries, speak 5+ languages.</p>
         </div>
 
-<!--         <div class="col-lg-3">
-          <h2>Languages</h2>
-          <p>People possess knowledge I want to know, too! I can't download it (yet!), so I have to extract the knowledge manually. I speak 5 languages well and there will be more. I do the theory at school, then practice in the wild, then come back for a certificate. I have 6 already.</p>
-        </div>
- -->
         <div class="col-lg-3">
           <h2>Photography</h2>
           <p>The present is infinitesimally short... unless you have a camera - then you can capture it forever. I attend photography workshops and practice often.</p>
