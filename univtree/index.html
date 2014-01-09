@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Univ Family Tree</title>
+  <meta name="author" content="Tomas Halgas">
+  <meta name="description" content="The college family tree of University College, Oxford">
+  <meta name="keywords" content="Family tree, University College, Univ, Oxford">
+  <meta charset="utf-8">
+  <style>
+
+  .node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+  }
+
+  .link {
+    stroke: #999;
+    stroke-opacity: .6;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .big {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  </style>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script>
+
+//to add another year of data follow the //++ comments
+//++ create new year of data and put it into .json format as is year 2013
+//each year contains list of students matriculating that year with their marriages and parents
+
+//last year of data
+//++ update the number
+var max_year = 2013;
+
+var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = Math.min.apply(Math, [w.innerWidth, e.clientWidth, g.clientWidth].filter(function(n){return n})),
+    y = Math.min.apply(Math, [w.innerHeight, e.clientHeight, g.clientHeight].filter(function(n){return n}));
+
+var width = Math.max(x-20,900),
+    height = Math.max(y-20,900);
+
+var color = d3.scale.ordinal().domain(d3.range(2010,max_year+1)).range(["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"]);
+
+var force = d3.layout.force()
+    .charge(-50)
+    .linkDistance(30)
+    .size([width, height]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("class", "big");
+
+var data = {};
+d3.json("2010.json", function(error, data2010) {
+d3.json("2011.json", function(error, data2011) {
+d3.json("2012.json", function(error, data2012) {
+d3.json("2013.json", function(error, data2013) {data[2013] = data2013;
+//++ add equivalent line for another year
+  var graph = {};
+  var id_dict = {}
+
+  //Nodes
+  //old format with a non-intuitive numeric hash Id for each student
+  var old_nodes = data2010.nodes.concat(data2011.nodes).concat(data2012.nodes);
+  old_nodes.forEach(function(node){id_dict[node.Id]=node});
+
+  //both-style indexing for transition year 2012
+  data2012.nodes.forEach(function(node){id_dict[node.Name+node.MatriculationYear]=node});
+
+  //new format with node id = StudentName ++ MatriculationYear, Eg: "Tomas Halgas2011"
+  var new_nodes = data2013.nodes;
+  new_nodes.forEach(function(node){id_dict[node.Name+node.MatriculationYear]=node});
+
+  //put together the complete list of nodes
+  graph.nodes = old_nodes.concat(new_nodes);
+  for(var i=0;i<graph.nodes.length;i++)
+    graph.nodes[i].position=i;
+
+
+  //Links
+  graph.links = [];
+  //marriage links
+  var marriage_edges = data2010.marriage_edges.concat(data2011.marriage_edges).concat(data2012.marriage_edges).concat(data2013.marriage_edges);
+  marriage_edges.forEach(function(link){
+    graph.links.push({"source":id_dict[link.Source].position,"target":id_dict[link.Target].position,"value":2});
+  });
+
+  //children links
+  var old_children_edges = data2010.children_edges.concat(data2011.children_edges).concat(data2012.children_edges);
+  old_children_edges.forEach(function(link){
+    graph.links.push({"source":id_dict[link.Source].position,"target":id_dict[link.Target].position,"value":1});
+  });
+  //for all new-style data
+  d3.range(2013,max_year+1).forEach(function(year){
+    var new_children_edges = data2013.children_edges;
+    new_children_edges.forEach(function(link){
+      var parents = [link.Parent1,link.Parent2,link.Parent3].filter(function(n){return n});
+      var children = [link.Child1,link.Child2,link.Child3].filter(function(n){return n});
+      parents.forEach(function(parent){
+        children.forEach(function(child){
+          graph.links.push({"source":id_dict[parent+(year-1)].position,"target":id_dict[child+year].position,"value":1});
+        });
+      });
+    });
+  });
+
+  force
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .start();
+
+  var link = svg.selectAll(".link")
+      .data(graph.links)
+    .enter().append("line")
+      .attr("class", "link")
+      .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+  var gnodes = svg.selectAll("g.gnode")
+      .data(graph.nodes)
+    .enter().append("g")
+      .classed("gnode",true);
+
+  var node = gnodes.append("circle")
+      .attr("class", "node")
+      .attr("r", 6)
+      .style("fill", function(d) { return color(d.MatriculationYear); })
+      .call(force.drag);
+
+  var labels = gnodes.append("text")
+      .text(function(d) { return d.Name; })
+      .attr("class", "label");
+
+  node.append("title")
+      .text(function(d) { return d.Name; });
+
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    gnodes.attr("transform", function(d) { 
+        return 'translate(' + [d.x, d.y] + ')'; 
+    });
+  });
+});
+});
+});
+});
+//++ close properly
+
+</script>
+</body>
+</html>
