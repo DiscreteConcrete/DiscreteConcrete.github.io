@@ -279,6 +279,13 @@ h1 {
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
 }
+/* this one is here for Sutro as I am adding a purple background behind the image */
+.img-div-4 div {
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
 
 .img-div-3 {
   height:120px;
