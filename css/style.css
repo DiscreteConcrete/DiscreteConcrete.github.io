@@ -326,3 +326,10 @@ h1 {
 .contact-grid .pull-left { float: none !important; }
 .contact-grid .media-body { width: auto; min-width: 0; }
 .contact-grid p { overflow-wrap: anywhere; }
+
+.footer-joke {
+  color: inherit;
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
