@@ -298,3 +298,15 @@ h1 {
   top: 0; left: 0; bottom: 0; right: 0;
 }
 
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  row-gap: 30px;
+  padding-top: 30px;
+}
+.responsive-grid > h1 { grid-column: 1 / -1; margin: 20px 0 10px; }
+.responsive-grid > .row { display: contents; }
+.responsive-grid > .row::before,
+.responsive-grid > .row::after,
+.responsive-grid > div:not(.row) { display: none; }
+.responsive-grid .col-md-3 { float: none; width: auto; }
